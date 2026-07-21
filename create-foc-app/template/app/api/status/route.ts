@@ -27,7 +27,7 @@ export async function GET() {
       dataSets: dataSets.map((ds) => ({
         dataSetId: ds.dataSetId.toString(),
         isLive: ds.isLive,
-        activePieceCount: ds.activePieceCount,
+        activePieceCount: Number(ds.activePieceCount),
         providerId: ds.providerId.toString(),
         withCDN: ds.withCDN,
       })),

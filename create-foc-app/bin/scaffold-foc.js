@@ -29,7 +29,7 @@ function fail(msg) {
 }
 
 async function main() {
-  console.log(chalk.cyan('\n🌊 create-foc-app') + chalk.dim(' — Filecoin Onchain Cloud starter\n'))
+  console.log(chalk.cyan('\n🌊 scaffold-foc') + chalk.dim(' — Filecoin Onchain Cloud starter\n'))
 
   let name = nameArg
   if (!name) {

@@ -1,6 +1,6 @@
 # My FOC App
 
-Scaffolded with [create-foc-app](https://www.npmjs.com/package/create-foc-app) — a Next.js app on the **Filecoin Onchain Cloud** via the Synapse SDK.
+Scaffolded with [scaffold-foc](https://www.npmjs.com/package/scaffold-foc) — a Next.js app on the **Filecoin Onchain Cloud** via the Synapse SDK.
 
 ## Quick start
 

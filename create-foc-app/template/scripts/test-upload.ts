@@ -14,7 +14,7 @@ async function testUpload() {
   const info = await synapse.storage.getStorageInfo()
   const minSize = Math.max(info.serviceParameters.minUploadSize, 256)
 
-  const testContent = `create-foc-app upload test — ${new Date().toISOString()}\nIf you can read this back, the FOC round trip works.\n`.padEnd(
+  const testContent = `scaffold-foc upload test — ${new Date().toISOString()}\nIf you can read this back, the FOC round trip works.\n`.padEnd(
     minSize,
     '.'
   )

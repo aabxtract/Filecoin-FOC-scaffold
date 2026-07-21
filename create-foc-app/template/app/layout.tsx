@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'FOC App',
-  description: 'Built on Filecoin Onchain Cloud with create-foc-app',
+  description: 'Built on Filecoin Onchain Cloud with scaffold-foc',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

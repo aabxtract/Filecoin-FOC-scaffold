@@ -4,7 +4,7 @@ loadEnv({ path: ['.env.local', '.env'], quiet: true })
 import { formatUnits } from '@filoz/synapse-sdk'
 import chalk from 'chalk'
 import { privateKeyToAccount } from 'viem/accounts'
-import { createSynapse } from '../lib/synapse'
+import { createSynapse, normalizePrivateKey } from '../lib/synapse'
 
 const pass = (msg: string) => console.log(chalk.green('  ✓'), msg)
 const fail = (msg: string, fix?: string) => {
@@ -32,7 +32,7 @@ async function check() {
   for (const key of ['FOC_PRIVATE_KEY', 'FOC_NETWORK']) {
     if (process.env[key]) pass(`${key} is set`)
     else {
-      fail(`${key} is missing`, 'fill it in .env.local (created for you by create-foc-app)')
+      fail(`${key} is missing`, 'fill it in .env.local (created for you by scaffold-foc)')
       hasErrors = true
     }
   }
@@ -53,7 +53,7 @@ async function check() {
 
   let address: `0x${string}`
   try {
-    address = privateKeyToAccount(process.env.FOC_PRIVATE_KEY as `0x${string}`).address
+    address = privateKeyToAccount(normalizePrivateKey(process.env.FOC_PRIVATE_KEY!)).address
     pass(`Wallet derived: ${address}`)
   } catch (e) {
     fail(`Invalid private key: ${e instanceof Error ? e.message : e}`)

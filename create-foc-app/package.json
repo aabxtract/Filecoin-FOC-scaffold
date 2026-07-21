@@ -1,10 +1,10 @@
 {
-  "name": "create-foc-app",
+  "name": "scaffold-foc",
   "version": "0.1.0",
   "description": "The fastest way to start building on Filecoin Onchain Cloud — scaffold a Next.js + Synapse SDK app with built-in setup checks",
   "type": "module",
   "bin": {
-    "create-foc-app": "./bin/create-foc-app.js"
+    "scaffold-foc": "./bin/scaffold-foc.js"
   },
   "files": [
     "bin",

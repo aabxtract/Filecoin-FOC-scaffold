@@ -67,7 +67,7 @@ export default function Home() {
     <main>
       <h1>🌊 FOC App</h1>
       <p className="sub">
-        Filecoin Onchain Cloud starter — scaffolded with <span className="mono">create-foc-app</span>
+        Filecoin Onchain Cloud starter — scaffolded with <span className="mono">scaffold-foc</span>
       </p>
 
       <div className="card">

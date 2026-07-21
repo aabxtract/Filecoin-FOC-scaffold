@@ -1,6 +1,6 @@
 # FOC App — Agent Context
 
-This project was scaffolded with **create-foc-app**. It uses the **Filecoin Onchain Cloud (FOC)** via the Synapse SDK — `@filoz/synapse-sdk` **v1.x** (verify the installed version before assuming API shapes; the SDK moves fast).
+This project was scaffolded with **scaffold-foc**. It uses the **Filecoin Onchain Cloud (FOC)** via the Synapse SDK — `@filoz/synapse-sdk` **v1.x** (verify the installed version before assuming API shapes; the SDK moves fast).
 
 ## Architecture
 

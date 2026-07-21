@@ -1,9 +1,9 @@
-# create-foc-app
+# scaffold-foc
 
 **The fastest way to start building on Filecoin Onchain Cloud.**
 
 ```bash
-npx create-foc-app my-project
+npx scaffold-foc my-project
 ```
 
 One command gives you a Next.js app wired to the [Synapse SDK](https://github.com/FilOzone/synapse-sdk) (v1.x) with a working upload/retrieve UI — plus built-in test scripts that verify your setup and debug storage issues *before* they hit production.
@@ -31,7 +31,7 @@ my-project/
 ## Quick start
 
 ```bash
-npx create-foc-app my-project
+npx scaffold-foc my-project
 cd my-project
 # put your wallet key in .env.local (faucet links are in the file)
 npm run foc:check
