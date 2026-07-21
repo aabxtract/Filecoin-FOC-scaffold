@@ -1,0 +1,32 @@
+{
+  "name": "create-foc-app",
+  "version": "0.1.0",
+  "description": "The fastest way to start building on Filecoin Onchain Cloud — scaffold a Next.js + Synapse SDK app with built-in setup checks",
+  "type": "module",
+  "bin": {
+    "create-foc-app": "./bin/create-foc-app.js"
+  },
+  "files": [
+    "bin",
+    "template"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "filecoin",
+    "foc",
+    "filecoin-onchain-cloud",
+    "synapse",
+    "scaffold",
+    "create-app",
+    "storage",
+    "web3"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1",
+    "prompts": "^2.4.2"
+  }
+}
