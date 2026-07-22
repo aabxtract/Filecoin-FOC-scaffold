@@ -3,3 +3,13 @@ create-foc-app-build-guide.md
 
 # local scaffold test artifact
 roundtrip-test/
+
+# build & cache outputs
+.next/
+*/.next/
+node_modules/
+*/node_modules/
+.cache/
+*.log
+.DS_Store
+
