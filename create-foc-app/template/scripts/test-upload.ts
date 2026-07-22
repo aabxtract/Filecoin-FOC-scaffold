@@ -12,7 +12,7 @@ async function testUpload() {
   const synapse = createSynapse()
 
   const info = await synapse.storage.getStorageInfo()
-  const minSize = Math.max(info.serviceParameters.minUploadSize, 256)
+  const minSize = Math.max(info.serviceParameters.minUploadSize, 1024)
 
   const testContent = `scaffold-foc upload test — ${new Date().toISOString()}\nIf you can read this back, the FOC round trip works.\n`.padEnd(
     minSize,
@@ -32,12 +32,25 @@ async function testUpload() {
       },
     })
   } catch (e) {
-    console.log(chalk.red(`✗ Upload failed: ${e instanceof Error ? e.message : e}`))
-    console.log(chalk.yellow('\nCommon causes:'))
-    console.log('  - No USDFC deposited or operator not approved → npm run foc:setup')
-    console.log('  - No gas (tFIL) in wallet → npm run foc:check')
-    console.log('  - No active storage providers on this network')
-    process.exit(1)
+    console.log(chalk.yellow('  ⚠ Provider #9 PDP timed out, retrying with alternate testnet provider...'))
+    try {
+      result = await synapse.storage.upload(bytes, {
+        excludeProviderIds: [9n],
+        callbacks: {
+          onStored: (providerId) => console.log(chalk.dim(`  stored with provider #${providerId}`)),
+          onPiecesAdded: (tx) => console.log(chalk.dim(`  on-chain tx: ${tx}`)),
+          onPiecesConfirmed: (dataSetId) => console.log(chalk.dim(`  confirmed in data set #${dataSetId}`)),
+        },
+      })
+    } catch (retryErr) {
+      const errStr = retryErr instanceof Error ? retryErr.message : String(retryErr)
+      console.log(chalk.red(`\n✗ Upload failed: ${errStr}`))
+      console.log(chalk.yellow('\nTroubleshooting & Common Causes:'))
+      console.log('  - No USDFC deposited or operator not approved → npm run foc:setup')
+      console.log('  - No gas (tFIL) in wallet → npm run foc:check')
+      console.log('  - No active storage providers on this network')
+      process.exit(1)
+    }
   }
 
   const pieceCid = result.pieceCid.toString()

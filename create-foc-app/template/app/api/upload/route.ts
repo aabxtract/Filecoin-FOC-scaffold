@@ -14,7 +14,12 @@ export async function POST(req: NextRequest) {
 
     // The SDK takes Uint8Array | ReadableStream, not a File
     const bytes = new Uint8Array(await file.arrayBuffer())
-    const result = await getSynapse().storage.upload(bytes)
+    const synapse = getSynapse()
+
+    const result = await synapse.storage.upload(bytes).catch(() => {
+      // Fallback: exclude testnet provider 9 if it experiences PDP confirmation timeouts
+      return synapse.storage.upload(bytes, { excludeProviderIds: [9n] })
+    })
 
     // bigints must be stringified before JSON serialization
     return NextResponse.json({

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-const INSTALL = 'npx scaffold-foc my-project'
+const INSTALL = 'npx scaffold-foc'
 
 /* ---------- scroll reveal ---------- */
 function useReveal() {
