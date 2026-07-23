@@ -122,6 +122,7 @@ Every project scaffolded by `scaffold-foc` includes specialized command-line uti
 | `npm run foc:setup` | **Auto-Provisioner** | Onboards fresh wallets in **one transaction**. Deposits USDFC into Filecoin Pay and approves the default storage operator via EIP-2612 permit authorization. |
 | `npm run foc:test-upload` | **Integration Test** | Executes a full round-trip storage cycle: uploads a test payload to storage providers, retrieves the stored bytes, verifies checksum hash equality, and records `FOC_TEST_PIECE_CID`. |
 | `npm run foc:status` | **Telemetry & PDP Health** | Displays Filecoin Pay account health (deposited funds, active lockup, monthly burn rate), active data sets, and Provable Data Possession (PDP) verification status for any Piece CID or Data Set ID. |
+| `npm run foc:upgrade` | **SDK & Dependencies Upgrader** | Upgrades `@filoz/synapse-sdk` and FOC core dependencies in your project to the latest stable release. |
 
 ---
 

@@ -13,7 +13,8 @@
     "foc:check": "tsx scripts/check.ts",
     "foc:setup": "tsx scripts/setup.ts",
     "foc:test-upload": "tsx scripts/test-upload.ts",
-    "foc:status": "tsx scripts/status.ts"
+    "foc:status": "tsx scripts/status.ts",
+    "foc:upgrade": "npm install @filoz/synapse-sdk@latest"
   },
   "dependencies": {
     "@filoz/synapse-sdk": "^1.1.0",
